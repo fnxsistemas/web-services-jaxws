@@ -66,4 +66,6 @@ $RECYCLE.BIN/
 .classpath
 .project
 .tern-project
+.pmd
+.checkstyle
 .springBeans

@@ -69,6 +69,38 @@ public class PeliculaServiceWsImp{
 		return peliculaMensaje;
 	}
 	
+	/* Metodo que devuelve una pelicula en base al codigo pasado por paramtro.*/
+	@WebMethod(operationName="obtenerportodo")
+	public PeliculaMensaje getAll() {
+		/* Se crea una clase para recoger el mensaje de las peliculas. */
+		PeliculaMensaje peliculaMensaje = new PeliculaMensaje();
+		/* Se crea la lista para recoger las peliculas.*/
+		List<Pelicula> peliculas = null;
+		/* Se crea un pelicula donde trabajar.*/		
+		//Pelicula pelicula = null;
+		/* Se valida la cabecera de la petición. */
+		if (validarPeticion()){
+			/* Se llama a la clase servicio de pelicula.*/
+			PeliculaService pS = new PeliculaServiceImp();	
+			/* Se construye un Array para contener el get que devuelve el getAll del service.*/
+			peliculas = new ArrayList<Pelicula>(pS.getAll());				
+			/* Se comrpueba si existe pelicula.*/
+			if (peliculas == null){	
+				/* Se carga mensaje de error en la clase de PeliculaMensaje.*/
+				peliculaMensaje.setMensaje("No encontrada");				
+			}else{
+				/* Se asigna la lista de peliculas a la clase PeliculaMensaje.*/
+				peliculaMensaje.setPeliculas(peliculas);
+			}
+		}else{
+			/* Se carga mensaje de error en la clase de PeliculaMensaje.*/
+			peliculaMensaje.setMensaje("No Valido");	
+		}
+		/* Se devuelve la clase PeliculaMensaje que contiene 
+		 * la lista de peliculas y el mensaje.*/
+		return peliculaMensaje;
+	}
+	
 	
 	private boolean validarPeticion(){
 		boolean valido = true;
@@ -86,7 +118,7 @@ public class PeliculaServiceWsImp{
 			/* Se comprueba el primer elemento de la lista con en nombre de la sesión.*/
 			if(SESIONID.equals(sesion.get(0).toString())){
 				/* Se asigna petición valida.*/
-				valido  =true;
+				valido = true;
 			}			
 		}
 		/* Se devuelve la validación.*/
