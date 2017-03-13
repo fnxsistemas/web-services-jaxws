@@ -76,8 +76,6 @@ public class PeliculaServiceWsImp{
 		PeliculaMensaje peliculaMensaje = new PeliculaMensaje();
 		/* Se crea la lista para recoger las peliculas.*/
 		List<Pelicula> peliculas = null;
-		/* Se crea un pelicula donde trabajar.*/		
-		//Pelicula pelicula = null;
 		/* Se valida la cabecera de la petición. */
 		if (validarPeticion()){
 			/* Se llama a la clase servicio de pelicula.*/
@@ -101,6 +99,22 @@ public class PeliculaServiceWsImp{
 		return peliculaMensaje;
 	}
 	
+	/* Metodo que elimina una pelicula en base al codigo pasado por parametro.*/
+	@WebMethod(operationName="borrarpelicula")
+	public PeliculaMensaje delete (Integer codigo) {
+		PeliculaMensaje peliculaMensaje = null;
+	
+		/* Se valida la cabecera de la petición. */
+		if (validarPeticion()){
+			/* Se llama a la clase servicio de pelicula.*/
+			PeliculaService pS = new PeliculaServiceImp();	
+			/* Se construye un Array para contener el get que devuelve el getAll del service.*/
+			pS.delete(codigo);
+			List<Pelicula> peliculas = new ArrayList<Pelicula>(pS.getAll());	
+			peliculaMensaje.setPeliculas(peliculas);		
+		}
+		return peliculaMensaje;	
+	}
 	
 	private boolean validarPeticion(){
 		boolean valido = true;

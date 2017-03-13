@@ -11,5 +11,6 @@ import com.ipartek.formacion.pojo.Pelicula;
 public interface PeliculaService {
 	public Set<Pelicula> getAll();
 	public Pelicula getById(int id);
+	public void delete(int codigo);
 
 }

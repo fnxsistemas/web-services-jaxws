@@ -121,6 +121,14 @@ public class PeliculaServiceImp implements PeliculaService{
 		/* Se devuelve la pelcicula.*/
 		return pelicula;
 	}
+	
+	/* Metodo que elimina una pelicula de la lista.*/
+	public void delete(int codigo){
+		/* Se recoge la pelicula.*/
+		Pelicula pelicula = this.encontrarPorCodigo(codigo);
+		/* Se elimina la pelicula. */
+		peliculas.remove(pelicula);
+	}
 
 	
 }
