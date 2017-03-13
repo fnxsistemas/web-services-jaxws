@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declaración de los servicios web Jax para publicar en un http. -->
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+	<!-- Sevicio Web para la clase HelloWorldWsImp y el listener al que respondera. -->
+	<endpoint name="HelloWorldWsImp" 
+	          implementation ="com.ipartek.formacion.ws.helloworld.HelloWorldWsImp"
+	          url-pattern="/helloworldws"/>
+	<!-- Sevicio Web para la clase com.ipartek.formacion.ws.CocheServiceWsImp y 
+	    el listener al que respondera. -->
+	<endpoint name="cocheWs" 
+	          implementation ="com.ipartek.formacion.ws.coche.CocheServiceWsImp"
+	          url-pattern="/cochews"/>
+	<!-- Sevicio Web para la clase com.ipartek.formacion.ws.AlumnoServiceWsImp y 
+	    el listener al que respondera. -->
+	<endpoint name="alumnoWs" 
+	          implementation ="com.ipartek.formacion.ws.alumno.AlumnoServiceWsImp"
+	          url-pattern="/alumnows"/>	   
+	                 <!-- Sevicio Web para la clase com.ipartek.formacion.ws.AlumnoServiceWsImp y 
+	    el listener al que respondera. -->
+	<!-- Sevicio Web para la clase com.ipartek.formacion.ws.PeliculaServiceWsImp y 
+	    el listener al que respondera. -->
+	<endpoint name="peliculaWs" 
+	          implementation ="com.ipartek.formacion.ws.pelicula.PeliculaServiceWsImp"
+	          url-pattern="/peliculaws"/>	   
+</endpoints>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>web-services-jaxws</display-name>
+	<welcome-file-list>
+		<!-- Recurso de entrada a la aplicación. -->
+	   <welcome-file>/helloworldws</welcome-file>
+	</welcome-file-list>
+	<listener>
+		<!-- Clase JAVAX que gestiona los servicios Web.. -->
+	    <listener-class>
+	    	com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+	    </listener-class>
+	</listener>
+	<servlet>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'helloworldws'. -->	
+	  <servlet-name>hello</servlet-name>
+	  <!-- Clase (JAVAX) que gestionará el WS 'helloworldws'. -->	
+	  <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'helloworldws'. -->	
+	  <servlet-name>hello</servlet-name>
+	  <!-- mapa que respondera al  WS 'helloworldws'. -->	
+	  <url-pattern>/helloworldws</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'cochews'. -->	
+	  <servlet-name>cochews</servlet-name>
+	  <!-- Clase (JAVAX) que gestionará el WS 'cochews'. -->	
+	  <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'helloworldws'. -->	
+	  <servlet-name>cochews</servlet-name>
+	   <!-- Clase (JAVAX) que gestionará el WS 'cochews'. -->
+	  <url-pattern>/cochews</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'alumnows'. -->	
+	  <servlet-name>alumnows</servlet-name>
+	  <!-- Clase (JAVAX) que gestionará el WS 'alumnows'. -->	
+	  <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'alumnows'. -->	
+	  <servlet-name>alumnows</servlet-name>
+	   <!-- Clase (JAVAX) que gestionará el WS 'cochews'. -->
+	  <url-pattern>/alumnows</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'peliculaws'. -->	
+	  <servlet-name>peliculaws</servlet-name>
+	  <!-- Clase (JAVAX) que gestionará el WS 'alumnows'. -->	
+	  <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	  <!-- Nombre del Servlet (JAVAX) que gestionará el WS 'peliculaws'. -->	
+	  <servlet-name>peliculaws</servlet-name>
+	   <!-- Clase (JAVAX) que gestionará el WS 'peliculaws'. -->
+	  <url-pattern>/peliculaws</url-pattern>
+	</servlet-mapping>
+</web-app>
